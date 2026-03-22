@@ -11,12 +11,6 @@
   <connectionClasses>
     <connectionClass name="sf">
       <connections>
-        <connection id="de30c376-0dae-4234-aee9-8a04fd6b1f21" name="Admin">
-          <summary/>
-          <connectionUrls>
-            <connectionUrl secureStorageNodeId="92560b96-151f-4132-b5e6-e09637431282" url="sf:user=rye+training@accenture.com;password={password};environment=OTHER;lightningMode=true"/>
-          </connectionUrls>
-        </connection>
         <connection id="53cdac44-7931-4487-8055-ac40aa333843" name="SalesforceAdmin">
           <summary/>
           <connectionUrls>
