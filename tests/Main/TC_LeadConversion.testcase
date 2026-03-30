@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testCase guid="b831f833-4b22-44e0-a181-7d025e3ea270">
+  <summary/>
+  <steps>
+    <apiCall apiId="com.provar.plugins.forcedotcom.core.testapis.ApexConnect" guid="22412dcd-d599-42e9-bebd-f8e96d72fa97" name="ApexConnect" testItemId="1" title="Salesforce Connect: SalesforceAdmin (Test)">
+      <arguments>
+        <argument id="connectionName">
+          <value class="value" valueClass="string">SalesforceAdmin</value>
+        </argument>
+        <argument id="connectionId">
+          <value class="value" valueClass="id">53cdac44-7931-4487-8055-ac40aa333843</value>
+        </argument>
+        <argument id="resultName">
+          <value class="value" valueClass="string">SalesforceAdmin</value>
+        </argument>
+        <argument id="resultScope">
+          <value class="value" valueClass="string">Test</value>
+        </argument>
+        <argument id="uiApplicationName">
+          <value class="value" valueClass="string">Sales</value>
+        </argument>
+        <argument id="quickUiLogin">
+          <value class="value" valueClass="boolean">true</value>
+        </argument>
+        <argument id="closeAllPrimaryTabs">
+          <value class="value" valueClass="boolean">true</value>
+        </argument>
+        <argument id="reuseConnectionName"/>
+        <argument id="alreadyOpenBehaviour">
+          <value class="value" valueClass="string">Fail</value>
+        </argument>
+        <argument id="privateBrowsingMode"/>
+        <argument id="enableObjectIdLogging">
+          <value class="value" valueClass="boolean">true</value>
+        </argument>
+        <argument id="autoCleanup"/>
+        <argument id="cleanupConnectionName"/>
+        <argument id="logFileLocation"/>
+        <argument id="username"/>
+        <argument id="password"/>
+        <argument id="securityToken"/>
+        <argument id="environment"/>
+        <argument id="lightningMode">
+          <value class="value" valueClass="string">default</value>
+        </argument>
+        <argument id="webBrowser"/>
+      </arguments>
+    </apiCall>
+    <caseCall guid="ec2c31a3-0eef-45d5-b4d7-fb877a546a18" testCaseId="7b22769a-8f3a-44f3-8532-335bf9844ae5" testCasePath="tests/Callables/Lead/CL_ValidateLeadErrorOnEmptySave.testcase" testItemId="2">
+      <arguments>
+        <argument id="reuseConnectionName">
+          <value class="value" valueClass="string">SalesforceAdmin</value>
+        </argument>
+      </arguments>
+    </caseCall>
+    <caseCall guid="7e35f296-2fef-41a7-8bf4-7a3a8057edf5" testCaseId="6500c56e-9131-41f4-b587-5b8ab2317f12" testCasePath="tests/Callables/Lead/CL_CreateLeadRecord.testcase" testItemId="3">
+      <arguments>
+        <argument id="reuseConnectionName">
+          <value class="value" valueClass="string">SalesforceAdmin</value>
+        </argument>
+      </arguments>
+    </caseCall>
+    <caseCall guid="83ef5022-4e70-4364-92c2-20470545f58c" testCaseId="6be0cd8b-d534-4758-bfda-93d58e76c862" testCasePath="tests/Callables/Lead/CL_ValidateLeadRecord.testcase" testItemId="4">
+      <arguments>
+        <argument id="reuseConnectionName">
+          <value class="value" valueClass="string">SalesforceAdmin</value>
+        </argument>
+      </arguments>
+    </caseCall>
+    <caseCall guid="70d3d791-4849-45bd-8bc4-b6fddcbf637a" testCaseId="067789f5-a6f2-400f-990f-52d9f255537b" testCasePath="tests/Callables/Lead/CL_ConvertLead.testcase" testItemId="5">
+      <arguments>
+        <argument id="reuseConnectionName">
+          <value class="value" valueClass="string">SalesforceAdmin</value>
+        </argument>
+      </arguments>
+    </caseCall>
+    <caseCall guid="3adb4eb6-fde2-447f-a37f-315877209c87" testCaseId="7b251025-4809-4ad5-a696-a639d4a88b9a" testCasePath="tests/Callables/Lead/CL_NavigateToOppRecord.testcase" testItemId="6">
+      <arguments>
+        <argument id="reuseConnectionName">
+          <value class="value" valueClass="string">SalesforceAdmin</value>
+        </argument>
+      </arguments>
+    </caseCall>
+  </steps>
+</testCase>
