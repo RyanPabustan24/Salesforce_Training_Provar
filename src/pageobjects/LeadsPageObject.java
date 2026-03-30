@@ -50,5 +50,38 @@ public class LeadsPageObject {
 	@ButtonType()
 	@FindBy(xpath = "//button[normalize-space(.)='Close error dialog']")
 	public WebElement closeErrorDialog;
+	@LinkType()
+	@FindBy(xpath = "//span[@title ='Recently Viewed Leads']")
+	public WebElement RecentlyViewedLeads;
+	@ButtonType()
+	@FindBy(xpath = "//div[contains(@class,'active') and contains(@class,'oneContent')]//button[normalize-space(.)='Select a List View: Leads']")
+	public WebElement searchType;
+	@LinkType()
+	@FindBy(xpath = "//div[contains(@class,'active') and contains(@class,'oneContent')]//a[normalize-space(.)='RH21L AH21P']")
+	public WebElement Name;
+	@LinkType()
+	@FindBy(xpath = "//div[contains(@class,'active') and contains(@class,'oneContent')]//a[normalize-space(.)='Activity']")
+	public WebElement activity;
+	@ButtonType()
+	@FindBy(xpath = "//span[@value = 'LogACall']")
+	public WebElement ValidateLogACall;
+	@ButtonType()
+	@FindBy(xpath = "//span[@value = 'NewTask']")
+	public WebElement ValidateNewTask;
+	@ButtonType()
+	@FindBy(xpath = "//span[@value = 'NewEvent']")
+	public WebElement ValidateNewEvent;
+	@ButtonType()
+	@FindBy(xpath = "//span[@value = 'SendEmail']")
+	public WebElement ValidateSendEmail;
+	@ButtonType()
+	@FindBy(xpath = "//div[contains(@class,'active') and contains(@class,'oneContent')]//button[normalize-space(.)='Refresh']")
+	public WebElement ValidateRefresh;
+	@ButtonType()
+	@FindBy(xpath = "//div[contains(@class,'active') and contains(@class,'oneContent')]//button[normalize-space(.)='Expand All']")
+	public WebElement ValidateExpandOrCollapse;
+	@LinkType()
+	@FindBy(xpath = "//div[contains(@class,'active') and contains(@class,'oneContent')]//a[normalize-space(.)='View All']")
+	public WebElement ValidateViewAll;
 			
 }

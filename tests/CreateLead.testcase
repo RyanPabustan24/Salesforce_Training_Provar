@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testCase guid="b473394f-6d15-40e4-a22a-509479ec4b28" id="49">
+<testCase guid="b473394f-6d15-40e4-a22a-509479ec4b28" id="50">
   <summary/>
   <steps>
     <apiCall apiId="com.provar.plugins.forcedotcom.core.testapis.ApexConnect" guid="fc605ad0-c245-4ca2-b7f1-148d85acbf9c" name="ApexConnect" testItemId="1" title="Salesforce Connect: SalesforceAdmin (Test)">
@@ -48,73 +48,150 @@
         <argument id="webBrowser"/>
       </arguments>
     </apiCall>
-    <apiCall apiId="com.provar.plugins.bundled.apis.control.SetValues" guid="5e73a909-bbb3-4822-bbdb-0b78539ba21f" name="SetValues" testItemId="80" title="Set Values: Company">
+    <apiCall apiId="com.provar.plugins.bundled.apis.control.StepGroup" guid="3127ab4c-1d20-481e-88b1-93d6f311aee6" name="StepGroup" testItemId="86" title="Set Variables for Lead Creation">
       <arguments>
-        <argument id="values">
-          <value class="valueList" mutable="Mutable">
-            <namedValues mutable="Mutable">
-              <namedValue name="valuePath">
-                <value class="value" valueClass="string">FirstName</value>
-              </namedValue>
-              <namedValue name="value">
-                <value class="compound">
-                  <parts>
-                    <value valueClass="string">R</value>
-                    <funcCall id="UniqueId">
-                      <argument id="length">
-                        <value class="value" valueClass="decimal">4</value>
-                      </argument>
-                    </funcCall>
-                  </parts>
-                </value>
-              </namedValue>
-              <namedValue name="valueScope">
-                <value class="value" valueClass="string">Test</value>
-              </namedValue>
-            </namedValues>
-            <namedValues mutable="Mutable">
-              <namedValue name="valuePath">
-                <value class="value" valueClass="string">LastName</value>
-              </namedValue>
-              <namedValue name="value">
-                <value class="compound">
-                  <parts>
-                    <value valueClass="string">A</value>
-                    <funcCall id="UniqueId">
-                      <argument id="length">
-                        <value class="value" valueClass="decimal">4</value>
-                      </argument>
-                    </funcCall>
-                  </parts>
-                </value>
-              </namedValue>
-              <namedValue name="valueScope">
-                <value class="value" valueClass="string">Test</value>
-              </namedValue>
-            </namedValues>
-            <namedValues mutable="Mutable">
-              <namedValue name="valuePath">
-                <value class="value" valueClass="string">Company</value>
-              </namedValue>
-              <namedValue name="value">
-                <value class="compound">
-                  <parts>
-                    <value valueClass="string">A</value>
-                    <funcCall id="UniqueId">
-                      <argument id="length">
-                        <value class="value" valueClass="decimal">4</value>
-                      </argument>
-                    </funcCall>
-                  </parts>
-                </value>
-              </namedValue>
-              <namedValue name="valueScope">
-                <value class="value" valueClass="string">Test</value>
-              </namedValue>
-            </namedValues>
-          </value>
+        <argument id="description">
+          <value class="value" valueClass="string">Set Variables for Lead Creation</value>
         </argument>
       </arguments>
+      <clauses>
+        <clause name="hidden" testItemId="87">
+          <steps>
+            <apiCall apiId="com.provar.plugins.bundled.apis.control.SetValues" guid="e74a498a-4aa3-4004-9246-5ff0fff42de8" isTitleUpdated="true" name="SetValues" testItemId="80" title="Set Values: First Name, Last Name, Company">
+              <arguments>
+                <argument id="values">
+                  <value class="valueList" mutable="Mutable">
+                    <namedValues mutable="Mutable">
+                      <namedValue name="valuePath">
+                        <value class="value" valueClass="string">FirstName</value>
+                      </namedValue>
+                      <namedValue name="value">
+                        <value class="compound">
+                          <parts>
+                            <value valueClass="string">R</value>
+                            <funcCall id="UniqueId">
+                              <argument id="length">
+                                <value class="value" valueClass="decimal">4</value>
+                              </argument>
+                            </funcCall>
+                          </parts>
+                        </value>
+                      </namedValue>
+                      <namedValue name="valueScope">
+                        <value class="value" valueClass="string">Test</value>
+                      </namedValue>
+                    </namedValues>
+                    <namedValues mutable="Mutable">
+                      <namedValue name="valuePath">
+                        <value class="value" valueClass="string">LastName</value>
+                      </namedValue>
+                      <namedValue name="value">
+                        <value class="compound">
+                          <parts>
+                            <value valueClass="string">A</value>
+                            <funcCall id="UniqueId">
+                              <argument id="length">
+                                <value class="value" valueClass="decimal">4</value>
+                              </argument>
+                            </funcCall>
+                          </parts>
+                        </value>
+                      </namedValue>
+                      <namedValue name="valueScope">
+                        <value class="value" valueClass="string">Test</value>
+                      </namedValue>
+                    </namedValues>
+                    <namedValues mutable="Mutable">
+                      <namedValue name="valuePath">
+                        <value class="value" valueClass="string">Company</value>
+                      </namedValue>
+                      <namedValue name="value">
+                        <value class="compound">
+                          <parts>
+                            <value valueClass="string">A</value>
+                            <funcCall id="UniqueId">
+                              <argument id="length">
+                                <value class="value" valueClass="decimal">4</value>
+                              </argument>
+                            </funcCall>
+                          </parts>
+                        </value>
+                      </namedValue>
+                      <namedValue name="valueScope">
+                        <value class="value" valueClass="string">Test</value>
+                      </namedValue>
+                    </namedValues>
+                  </value>
+                </argument>
+              </arguments>
+            </apiCall>
+            <apiCall apiId="com.provar.plugins.bundled.apis.control.SetValues" guid="5e58e2d1-89c8-4e0e-a179-2f6706229600" name="SetValues" testItemId="85" title="Set Values: FullName">
+              <arguments>
+                <argument id="values">
+                  <value class="valueList" mutable="Mutable">
+                    <namedValues mutable="Mutable">
+                      <namedValue name="valuePath">
+                        <value class="value" valueClass="string">FullName</value>
+                      </namedValue>
+                      <namedValue name="value">
+                        <value class="compound">
+                          <parts>
+                            <variable>
+                              <path element="FirstName"/>
+                            </variable>
+                            <variable>
+                              <path element="LastName"/>
+                            </variable>
+                          </parts>
+                        </value>
+                      </namedValue>
+                      <namedValue name="valueScope">
+                        <value class="value" valueClass="string">Test</value>
+                      </namedValue>
+                    </namedValues>
+                  </value>
+                </argument>
+              </arguments>
+            </apiCall>
+            <apiCall apiId="com.provar.plugins.bundled.apis.control.SetValues" guid="02e6b656-8d38-404c-95a6-f9fe7e389f45" name="SetValues" testItemId="90" title="Set Values: Email">
+              <arguments>
+                <argument id="values">
+                  <value class="valueList" mutable="Mutable">
+                    <namedValues mutable="Mutable">
+                      <namedValue name="valuePath">
+                        <value class="value" valueClass="string">Email</value>
+                      </namedValue>
+                      <namedValue name="value">
+                        <value class="compound">
+                          <parts>
+                            <variable>
+                              <path element="FullName"/>
+                            </variable>
+                            <funcCall id="UniqueId">
+                              <argument id="length">
+                                <value class="value" valueClass="decimal">5</value>
+                              </argument>
+                              <argument id="format">
+                                <value class="variable">
+                                  <path element="NUMERIC"/>
+                                </value>
+                              </argument>
+                            </funcCall>
+                            <value valueClass="string">@autotest.com</value>
+                          </parts>
+                        </value>
+                      </namedValue>
+                      <namedValue name="valueScope">
+                        <value class="value" valueClass="string">Test</value>
+                      </namedValue>
+                    </namedValues>
+                  </value>
+                </argument>
+              </arguments>
+            </apiCall>
+          </steps>
+        </clause>
+      </clauses>
     </apiCall>
     <apiCall apiId="com.provar.plugins.bundled.apis.control.StepGroup" guid="46c6bf3a-a647-4358-80bc-a3afeef46051" name="StepGroup" testItemId="4" title="Error Handling">
       <arguments>
@@ -725,7 +802,7 @@
                         </apiParam>
                       </generatedParameters>
                     </apiCall>
-                    <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" guid="d7388b25-21a4-4677-871e-fda3d804638a" name="UiDoAction" testItemId="84" title="Set the Email to {FirstName}{LastName}{UniqueId(5, NUMERIC)}@autotest.com">
+                    <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" guid="d7388b25-21a4-4677-871e-fda3d804638a" name="UiDoAction" testItemId="84" title="Set the Email to {Email}">
                       <arguments>
                         <argument id="locator">
                           <value class="uiLocator" uri="ui:pageobject:field?field=Email&amp;pageId=pageobjects.LeadsPageObject"/>
@@ -734,26 +811,8 @@
                           <value class="uiInteraction" uri="ui:interaction?name=set"/>
                         </argument>
                         <argument id="value">
-                          <value class="compound">
-                            <parts>
-                              <variable>
-                                <path element="FirstName"/>
-                              </variable>
-                              <variable>
-                                <path element="LastName"/>
-                              </variable>
-                              <funcCall id="UniqueId">
-                                <argument id="length">
-                                  <value class="value" valueClass="decimal">5</value>
-                                </argument>
-                                <argument id="format">
-                                  <value class="variable">
-                                    <path element="NUMERIC"/>
-                                  </value>
-                                </argument>
-                              </funcCall>
-                              <value valueClass="string">@autotest.com</value>
-                            </parts>
+                          <value class="variable">
+                            <path element="Email"/>
                           </value>
                         </argument>
                         <argument id="blur">
@@ -779,7 +838,7 @@
                         </argument>
                         <argument id="locatorParams"/>
                         <argument id="interactionDescription">
-                          <value class="value" valueClass="string">Set the Email to {FirstName}{LastName}{UniqueId(5, NUMERIC)}@autotest.com</value>
+                          <value class="value" valueClass="string">Set the Email to {Email}</value>
                         </argument>
                       </arguments>
                       <generatedParameters>
