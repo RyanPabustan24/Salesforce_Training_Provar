@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testCase guid="8976382d-141c-4d49-a833-10f8112f2d11" id="33">
+  <summary/>
+  <steps>
+    <apiCall apiId="com.provar.plugins.forcedotcom.core.testapis.ApexConnect" guid="0749d601-e622-40f7-8bd7-57c0e8af17c2" name="ApexConnect" testItemId="1" title="Salesforce Connect: SalesforceAdmin (Test)">
+      <arguments>
+        <argument id="connectionName">
+          <value class="value" valueClass="string">SalesforceAdmin</value>
+        </argument>
+        <argument id="connectionId">
+          <value class="value" valueClass="id">53cdac44-7931-4487-8055-ac40aa333843</value>
+        </argument>
+        <argument id="resultName">
+          <value class="value" valueClass="string">SalesforceAdmin</value>
+        </argument>
+        <argument id="resultScope">
+          <value class="value" valueClass="string">Test</value>
+        </argument>
+        <argument id="uiApplicationName">
+          <value class="value" valueClass="string">Sales</value>
+        </argument>
+        <argument id="quickUiLogin">
+          <value class="value" valueClass="boolean">true</value>
+        </argument>
+        <argument id="closeAllPrimaryTabs">
+          <value class="value" valueClass="boolean">true</value>
+        </argument>
+        <argument id="reuseConnectionName"/>
+        <argument id="alreadyOpenBehaviour">
+          <value class="value" valueClass="string">Fail</value>
+        </argument>
+        <argument id="privateBrowsingMode"/>
+        <argument id="enableObjectIdLogging">
+          <value class="value" valueClass="boolean">true</value>
+        </argument>
+        <argument id="autoCleanup"/>
+        <argument id="cleanupConnectionName"/>
+        <argument id="logFileLocation"/>
+        <argument id="username"/>
+        <argument id="password"/>
+        <argument id="securityToken"/>
+        <argument id="environment"/>
+        <argument id="lightningMode">
+          <value class="value" valueClass="string">default</value>
+        </argument>
+        <argument id="webBrowser"/>
+      </arguments>
+    </apiCall>
+    <caseCall guid="163c5548-1935-45de-b93e-4f928ba57a96" testCaseId="6be0cd8b-d534-4758-bfda-93d58e76c862" testCasePath="tests/Callables/Lead/CL_ValidateLeadRecord.testcase" testItemId="2">
+      <arguments>
+        <argument id="reuseConnectionName">
+          <value class="value" valueClass="string">SalesforceAdmin</value>
+        </argument>
+      </arguments>
+    </caseCall>
+    <caseCall guid="0074f7b6-4fdd-40e3-9f12-11a8aaf89d50" testCaseId="067789f5-a6f2-400f-990f-52d9f255537b" testCasePath="tests/Callables/Lead/CL_ConvertLead.testcase" testItemId="3">
+      <arguments>
+        <argument id="reuseConnectionName">
+          <value class="value" valueClass="string">SalesforceAdmin</value>
+        </argument>
+      </arguments>
+    </caseCall>
+    <caseCall guid="72c95118-a5e0-4661-917b-8df816495471" testCaseId="7b251025-4809-4ad5-a696-a639d4a88b9a" testCasePath="tests/Callables/Lead/CL_NavigateToOppRecord.testcase" testItemId="4">
+      <arguments>
+        <argument id="reuseConnectionName">
+          <value class="value" valueClass="string">SalesforceAdmin</value>
+        </argument>
+      </arguments>
+    </caseCall>
+  </steps>
+</testCase>
