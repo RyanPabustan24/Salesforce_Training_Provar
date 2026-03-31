@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testCase guid="140e5177-00ba-4338-8b9a-0b91b2d18748" id="11">
+<testCase guid="140e5177-00ba-4338-8b9a-0b91b2d18748" id="2">
   <summary/>
   <steps>
     <apiCall apiId="com.provar.plugins.forcedotcom.core.testapis.ApexConnect" guid="61c22bd3-0c48-47c5-bb31-7a76c15b9639" name="ApexConnect" testItemId="1" title="Salesforce Connect: MyNewConnection (Test)">
@@ -17,7 +17,7 @@
           <value class="value" valueClass="string">Test</value>
         </argument>
         <argument id="uiApplicationName">
-          <value class="value" valueClass="string">Sales</value>
+          <value class="value" valueClass="string">LightningSales</value>
         </argument>
         <argument id="quickUiLogin">
           <value class="value" valueClass="boolean">true</value>
@@ -236,13 +236,13 @@
         </clause>
       </clauses>
     </apiCall>
-    <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiWithScreen" guid="0492af7c-9a03-428c-974c-d5b3a94aa3c4" name="UiWithScreen" testItemId="106" title="On SF Lead Recently Viewed Leads list view">
+    <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiWithScreen" guid="a236ec88-5f7a-4851-ab25-46176e94ed78" name="UiWithScreen" testItemId="165" title="On SF Lead Recently Viewed Leads list view">
       <arguments>
         <argument id="uiConnectionName">
           <value class="value" valueClass="string">MyNewConnection</value>
         </argument>
         <argument id="target">
-          <value class="uiTarget" uri="sf:ui:target?object=Lead&amp;action=List&amp;listView=RecentlyViewedLeads"/>
+          <value class="uiTarget" uri="sf:ui:target?listView=RecentlyViewedLeads&amp;object=Lead&amp;action=List"/>
         </argument>
         <argument id="navigate">
           <value class="value" valueClass="string">Dont</value>
@@ -265,9 +265,9 @@
         </argument>
       </arguments>
       <clauses>
-        <clause name="substeps" testItemId="107">
+        <clause name="substeps" testItemId="166">
           <steps>
-            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiWithRow" guid="fd989d8c-8629-48f0-9e8e-40901481f953" name="UiWithRow" testItemId="111" title="With Lead rows {Name = &quot;FirstName LastName&quot;}">
+            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiWithRow" guid="6f757b2c-60a0-459d-91c6-f61cf3af6957" name="UiWithRow" testItemId="167" title="With Lead rows {1}">
               <arguments>
                 <argument id="uiConnectionName">
                   <value class="value" valueClass="string">MyNewConnection</value>
@@ -276,15 +276,10 @@
                   <value class="uiLocator" uri="sf:ui:locator:row?table=List%2FlistView%2FlistTable"/>
                 </argument>
                 <argument id="uiRowLocator">
-                  <value class="eq">
-                    <lhs class="variable">
-                      <path element="Name"/>
-                    </lhs>
-                    <rhs class="value" valueClass="string">FirstName LastName</rhs>
-                  </value>
+                  <value class="value" valueClass="decimal">1</value>
                 </argument>
                 <argument id="locatorDescription">
-                  <value class="value" valueClass="string">With Lead rows {Name = "FirstName LastName"}</value>
+                  <value class="value" valueClass="string">With Lead rows {1}</value>
                 </argument>
                 <argument id="failIfNotFound">
                   <value class="value" valueClass="boolean">true</value>
@@ -301,12 +296,12 @@
                 </argument>
               </arguments>
               <clauses>
-                <clause name="substeps" testItemId="112">
+                <clause name="substeps" testItemId="168">
                   <steps>
-                    <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" guid="15c1190d-4417-4e0e-953a-82b531bd0ab1" name="UiDoAction" testItemId="113" title="Click the Name field">
+                    <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" guid="93018146-12f6-4166-9a5b-88b6d7c9221d" name="UiDoAction" testItemId="169" title="Click the Name field">
                       <arguments>
                         <argument id="locator">
-                          <value class="uiLocator" uri="ui:locator?name=Name&amp;binding=sf%3Aui%3Abinding%3Aobject%3Ffield%3DName%26object%3DLead"/>
+                          <value class="uiLocator" uri="ui:locator?binding=sf%3Aui%3Abinding%3Aobject%3Ffield%3DName%26object%3DLead&amp;name=Name"/>
                         </argument>
                         <argument id="interaction">
                           <value class="uiInteraction" uri="ui:interaction?name=action"/>
@@ -346,15 +341,6 @@
                   </steps>
                 </clause>
               </clauses>
-              <generatedParameters>
-                <apiParam group="options" name="autoPaginate" title="Auto Paginate">
-                  <summary>Whether Show More/Next is clicked till the match condition succeeds.</summary>
-                  <defaultValue>false</defaultValue>
-                  <type>
-                    <booleanType/>
-                  </type>
-                </apiParam>
-              </generatedParameters>
             </apiCall>
           </steps>
         </clause>
@@ -418,97 +404,10 @@
                   <value class="value" valueClass="string">full</value>
                 </argument>
                 <argument id="columnAssertions">
-                  <value class="valueList" mutable="Mutable"/>
+                  <value class="valueList" displayValue="]" mutable="Mutable"/>
                 </argument>
                 <argument id="pageAssertions">
-                  <value class="valueList" mutable="Mutable"/>
-                </argument>
-                <argument id="locatorParams"/>
-                <argument id="beforeWait">
-                  <value class="uiWait" uri="default"/>
-                </argument>
-                <argument id="autoRetry">
-                  <value class="uiWait" uri="ui:wait:autoRetry:timeout=10"/>
-                </argument>
-                <argument id="captureBefore">
-                  <value class="value" valueClass="string">false</value>
-                </argument>
-              </arguments>
-            </apiCall>
-          </steps>
-        </clause>
-      </clauses>
-      <generatedParameters>
-        <apiParam group="target" name="sfUiTargetObjectId" title="Object Id">
-          <summary>The Id of the SF Object to be Viewed or Edited.</summary>
-          <type>
-            <textType/>
-          </type>
-        </apiParam>
-      </generatedParameters>
-    </apiCall>
-    <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiWithScreen" guid="cd95a7ad-87b5-4efb-8778-28ebda64791e" name="UiWithScreen" testItemId="127" title="On SF Lead View screen">
-      <arguments>
-        <argument id="uiConnectionName">
-          <value class="value" valueClass="string">MyNewConnection</value>
-        </argument>
-        <argument id="target">
-          <value class="uiTarget" uri="sf:ui:target?object=Lead&amp;action=View&amp;noOverride=true"/>
-        </argument>
-        <argument id="navigate">
-          <value class="value" valueClass="string">Always</value>
-        </argument>
-        <argument id="targetDescription">
-          <value class="value" valueClass="string">On SF Lead View screen</value>
-        </argument>
-        <argument id="windowSelection">
-          <value class="value" valueClass="string">Default</value>
-        </argument>
-        <argument id="windowSize">
-          <value class="value" valueClass="string">Default</value>
-        </argument>
-        <argument id="closeWindow"/>
-        <argument id="captureBefore">
-          <value class="value" valueClass="string">false</value>
-        </argument>
-        <argument id="captureAfter">
-          <value class="value" valueClass="string">false</value>
-        </argument>
-        <argument id="sfUiTargetObjectId">
-          <value class="value" valueClass="string">00QgK00000Cb0QLUAZ</value>
-        </argument>
-      </arguments>
-      <clauses>
-        <clause name="substeps" testItemId="128">
-          <steps>
-            <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiAssert" guid="5c1b1cc5-7968-454c-b1d7-af9e9e2601fa" name="UiAssert" testItemId="130" title="UI Assert">
-              <arguments>
-                <argument id="resultName">
-                  <value class="value" valueClass="string">Values</value>
-                </argument>
-                <argument id="resultScope">
-                  <value class="value" valueClass="string">Test</value>
-                </argument>
-                <argument id="fieldAssertions">
-                  <value class="valueList" mutable="Mutable">
-                    <uiFieldAssertion resultName="NewEvent">
-                      <fieldLocator uri="ui:locator?name=NewEvent&amp;binding=sf%3Aui%3Abinding%3Aobject%3Fobject%3DLead%26quickAction%3DNewEvent"/>
-                      <attributeAssertions>
-                        <uiAttributeAssertion attributeName="value" comparisonType="Contains" normalize="true">
-                          <value class="value" valueClass="string">New Event</value>
-                        </uiAttributeAssertion>
-                      </attributeAssertions>
-                    </uiFieldAssertion>
-                  </value>
-                </argument>
-                <argument id="captureAfter">
-                  <value class="value" valueClass="string">false</value>
-                </argument>
-                <argument id="columnAssertions">
-                  <value class="valueList" mutable="Mutable"/>
-                </argument>
-                <argument id="pageAssertions">
-                  <value class="valueList" mutable="Mutable"/>
+                  <value class="valueList" displayValue="]" mutable="Mutable"/>
                 </argument>
                 <argument id="locatorParams"/>
                 <argument id="beforeWait">
@@ -546,10 +445,10 @@
                   <value class="value" valueClass="string">false</value>
                 </argument>
                 <argument id="columnAssertions">
-                  <value class="valueList" mutable="Mutable"/>
+                  <value class="valueList" displayValue="]" mutable="Mutable"/>
                 </argument>
                 <argument id="pageAssertions">
-                  <value class="valueList" mutable="Mutable"/>
+                  <value class="valueList" displayValue="]" mutable="Mutable"/>
                 </argument>
                 <argument id="locatorParams"/>
                 <argument id="beforeWait">
@@ -587,10 +486,10 @@
                   <value class="value" valueClass="string">false</value>
                 </argument>
                 <argument id="columnAssertions">
-                  <value class="valueList" mutable="Mutable"/>
+                  <value class="valueList" displayValue="]" mutable="Mutable"/>
                 </argument>
                 <argument id="pageAssertions">
-                  <value class="valueList" mutable="Mutable"/>
+                  <value class="valueList" displayValue="]" mutable="Mutable"/>
                 </argument>
                 <argument id="locatorParams"/>
                 <argument id="beforeWait">
@@ -604,52 +503,6 @@
                 </argument>
               </arguments>
             </apiCall>
-          </steps>
-        </clause>
-      </clauses>
-      <generatedParameters>
-        <apiParam group="target" name="sfUiTargetObjectId" title="Object Id">
-          <summary>The Id of the SF Object to be Viewed or Edited.</summary>
-          <type>
-            <textType/>
-          </type>
-        </apiParam>
-      </generatedParameters>
-    </apiCall>
-    <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiWithScreen" guid="fbad10f3-94d1-4e6b-a328-bbc9abe342c1" name="UiWithScreen" testItemId="132" title="On SF Lead Activity Timeline screen">
-      <arguments>
-        <argument id="uiConnectionName">
-          <value class="value" valueClass="string">MyNewConnection</value>
-        </argument>
-        <argument id="target">
-          <value class="uiTarget" uri="sf:ui:target?object=Lead&amp;action=ActivityTimeline"/>
-        </argument>
-        <argument id="navigate">
-          <value class="value" valueClass="string">Dont</value>
-        </argument>
-        <argument id="targetDescription">
-          <value class="value" valueClass="string">On SF Lead Activity Timeline screen</value>
-        </argument>
-        <argument id="windowSelection">
-          <value class="value" valueClass="string">Default</value>
-        </argument>
-        <argument id="windowSize">
-          <value class="value" valueClass="string">Default</value>
-        </argument>
-        <argument id="closeWindow"/>
-        <argument id="captureBefore">
-          <value class="value" valueClass="string">false</value>
-        </argument>
-        <argument id="captureAfter">
-          <value class="value" valueClass="string">false</value>
-        </argument>
-        <argument id="sfUiTargetObjectId">
-          <value class="value" valueClass="string">00QgK00000Cb0QLUAZ</value>
-        </argument>
-      </arguments>
-      <clauses>
-        <clause name="substeps" testItemId="133">
-          <steps>
             <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiAssert" guid="2d533394-f098-48ac-91d4-d3c7f6104bea" name="UiAssert" testItemId="134" title="UI Assert">
               <arguments>
                 <argument id="resultName">
@@ -674,10 +527,10 @@
                   <value class="value" valueClass="string">full</value>
                 </argument>
                 <argument id="columnAssertions">
-                  <value class="valueList" mutable="Mutable"/>
+                  <value class="valueList" displayValue="]" mutable="Mutable"/>
                 </argument>
                 <argument id="pageAssertions">
-                  <value class="valueList" mutable="Mutable"/>
+                  <value class="valueList" displayValue="]" mutable="Mutable"/>
                 </argument>
                 <argument id="locatorParams"/>
                 <argument id="beforeWait">
@@ -715,10 +568,10 @@
                   <value class="value" valueClass="string">full</value>
                 </argument>
                 <argument id="columnAssertions">
-                  <value class="valueList" mutable="Mutable"/>
+                  <value class="valueList" displayValue="]" mutable="Mutable"/>
                 </argument>
                 <argument id="pageAssertions">
-                  <value class="valueList" mutable="Mutable"/>
+                  <value class="valueList" displayValue="]" mutable="Mutable"/>
                 </argument>
                 <argument id="locatorParams"/>
                 <argument id="beforeWait">
@@ -773,62 +626,10 @@
                 </argument>
               </arguments>
             </apiCall>
-          </steps>
-        </clause>
-      </clauses>
-      <generatedParameters>
-        <apiParam group="target" name="sfUiTargetObjectId" title="Object Id">
-          <summary>The Id of the SF Object to be Viewed or Edited.</summary>
-          <type>
-            <textType/>
-          </type>
-        </apiParam>
-      </generatedParameters>
-    </apiCall>
-    <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiWithScreen" guid="7682ff51-cbd2-4cda-a3b4-d65cdbcb1765" name="UiWithScreen" testItemId="138" title="On SF Lead View screen">
-      <arguments>
-        <argument id="uiConnectionName">
-          <value class="value" valueClass="string">MyNewConnection</value>
-        </argument>
-        <argument id="target">
-          <value class="uiTarget" uri="sf:ui:target?object=Lead&amp;action=View&amp;noOverride=true"/>
-        </argument>
-        <argument id="navigate">
-          <value class="value" valueClass="string">Dont</value>
-        </argument>
-        <argument id="targetDescription">
-          <value class="value" valueClass="string">On SF Lead View screen</value>
-        </argument>
-        <argument id="windowSelection">
-          <value class="value" valueClass="string">Default</value>
-        </argument>
-        <argument id="windowSize">
-          <value class="value" valueClass="string">Default</value>
-        </argument>
-        <argument id="closeWindow"/>
-        <argument id="captureBefore">
-          <value class="value" valueClass="string">false</value>
-        </argument>
-        <argument id="captureAfter">
-          <value class="value" valueClass="string">false</value>
-        </argument>
-        <argument id="sfUiTargetObjectId">
-          <value class="value" valueClass="string">00QgK00000Cb0QLUAZ</value>
-        </argument>
-      </arguments>
-      <clauses>
-        <clause name="substeps" testItemId="139">
-          <steps>
             <apiCall apiId="com.provar.plugins.forcedotcom.core.ui.UiDoAction" guid="93c35e88-41b1-4d57-b706-66ec4ebf5fe2" name="UiDoAction" testItemId="140" title="Click the Convert button">
               <arguments>
                 <argument id="locator">
                   <value class="uiLocator" uri="ui:locator?name=Convert&amp;binding=sf%3Aui%3Abinding%3Aobject%3Fobject%3DLead%26action%3DConvert"/>
-                </argument>
-                <argument id="interaction">
-                  <value class="uiInteraction" uri="ui:interaction?name=action"/>
-                </argument>
-                <argument id="hover">
-                  <value class="value" valueClass="boolean">true</value>
                 </argument>
                 <argument id="captureBefore">
                   <value class="value" valueClass="string">false</value>
@@ -849,18 +650,24 @@
                 <argument id="interactionDescription">
                   <value class="value" valueClass="string">Click the Convert button</value>
                 </argument>
+                <argument id="interaction">
+                  <value class="uiInteraction" uri="ui:interaction?name=action"/>
+                </argument>
+                <argument id="hover">
+                  <value class="value" valueClass="boolean">true</value>
+                </argument>
                 <argument id="ieClickMethod">
                   <value class="value" valueClass="string">Default</value>
                 </argument>
               </arguments>
               <generatedParameters>
-                <apiParam group="value" name="hover" seq="10000" title="Hover before Clicking">
+                <apiParam group="value" name="hover" title="Hover before Clicking">
                   <summary>Whether the mouse should hover over the field before it is clicked.</summary>
                   <type>
                     <booleanType/>
                   </type>
                 </apiParam>
-                <apiParam group="value" name="ieClickMethod" seq="10001" title="IE Click Method">
+                <apiParam group="value" name="ieClickMethod" title="IE Click Method">
                   <summary>How the click should be executed for Internet Explorer.</summary>
                   <type>
                     <choiceType>

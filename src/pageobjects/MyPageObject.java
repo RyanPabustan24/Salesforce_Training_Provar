@@ -155,5 +155,20 @@ public class MyPageObject {
 	@ButtonType()
 	@FindBy(xpath = "//div[contains(@class,'active') and contains(@class,'oneContent')]//button[@name='SaveEdit']")
 	public WebElement SaveEdit;
+	@TextType()
+	@FindByLabel(label = "NewTask")
+	public WebElement NewTaskUI;
+	@TextType()
+	@FindByLabel(label = "NewTask")
+	public WebElement NewTaskUI1;
+	@LinkType()
+	@FindBy(xpath = "//div[contains(@class, 'active') and contains(@class, 'open') and (contains(@class, 'forceModal') or contains(@class, 'uiModal'))][last()]//a[normalize-space(.)='ND4OE0J-']")
+	public WebElement OpportunityLinkName;
+	@LinkType()
+	@FindBy(xpath = "//div[contains(@class, 'active') and contains(@class, 'open') and (contains(@class, 'forceModal') or contains(@class, 'uiModal'))][last()]//a[normalize-space(.)='NDSOEND-']")
+	public WebElement OpportunityLinkName1;
+	@TextType()
+	@FindBy(xpath = "//one-app-launcher-search-bar//lightning-primitive-input-simple//input")
+	public WebElement AppLauncherSearch;
 			
 }
